@@ -3,17 +3,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 class Solution {
-
-    public static void main(String[] args) {
-        String str = "ABCB";
-        System.out.println(new Solution().findPermutation(str));
-    }
-
     public ArrayList<String> findPermutation(String s) {
         Set<String> set = new HashSet<>();
         genPerm(s, "", set);
         return new ArrayList<>(set);
     }
+
 
     private static void genPerm(String str, String res, Set<String> set) {
         if (str.isEmpty()) {
@@ -26,5 +21,10 @@ class Solution {
             String fullPart = leftPart + rightPart;
             genPerm(fullPart, res + str.charAt(i), set);
         }
+    }
+
+    public static void main(String[] args) {
+        String str = "ABCC";
+        System.out.println(new Solution().findPermutation(str));
     }
 }
