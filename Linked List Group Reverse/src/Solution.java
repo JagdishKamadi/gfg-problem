@@ -52,6 +52,7 @@ class Solution {
             current.next = new Node(arr[i]);
             current = current.next;
         }
+        printLinkedList(head);
         Node newHead = new Solution().reverseKGroup(head, 4);
         printLinkedList(newHead);
     }
